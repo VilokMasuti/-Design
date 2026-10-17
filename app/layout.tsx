@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import localFont from "next/font/local";
+
+import { cn } from "@/lib/utils";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-mono",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const satoshi = localFont({
+  src: "../public/fonts/Satoshi-Variable.ttf",
+  variable: "--font-satoshi",
+  weight: "300 900",
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +35,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={cn(
+        "antialiased",
+        inter.variable,
+        satoshi.variable,
+        "font-mono",
+        jetbrainsMono.variable,
+      )}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className=" min-h-dvh flex flex-col">{children}</body>
     </html>
   );
 }
