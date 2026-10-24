@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
-import { cn } from "@/lib/utils";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -35,15 +35,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
+      suppressHydrationWarning
+      className={[
         "antialiased",
         inter.variable,
         satoshi.variable,
-        "font-mono",
         jetbrainsMono.variable,
-      )}
+        "[--pattern-fg:var(--color-neutral-950)]/4",
+        "dark:[--pattern-fg:var(--color-neutral-50)]/10",
+      ].join(" ")}
     >
-      <body className=" min-h-dvh flex flex-col">{children}</body>
+      <body
+        className="
+    min-h-dvh flex flex-col bg-background text-foreground Back
+
+
+  "
+      >
+        <NextThemesProvider attribute="class" defaultTheme="light">
+          {children}
+        </NextThemesProvider>
+      </body>
     </html>
   );
 }

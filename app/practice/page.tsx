@@ -2,7 +2,10 @@
 import { motion } from "motion/react";
 import useSound from "use-sound";
 import Container from "../components/Container";
+import DarkMode from "../components/sections/DarkMode";
+import { Keyboard } from "../components/sections/Keyboardsimple";
 import Responsivesidebar from "../components/sections/Responsivesidebar";
+import Marker from "../components/sections/SVG/Marker";
 const Par = () => {
   const [playOpen] = useSound("/click.mp3", {
     volume: 0.25,
@@ -48,7 +51,15 @@ const Par = () => {
             Design
           </motion.span>
         </div>
+        <div className=" my-10">
+          <Keyboard className="" />
+        </div>
+
+        <div className=" my-10">
+          <Marker />
+        </div>
       </Container>
+      <DarkMode />
     </main>
   );
 };

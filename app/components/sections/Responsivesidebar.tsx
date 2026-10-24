@@ -21,7 +21,7 @@ const Responsivesidebar = () => {
   return (
     <aside className=" relative">
       <nav
-        className=" flex  rounded-sm justify-between items-center  max-w-4xl mt-4 text-black border border-neutral-100  bg-white
+        className=" flex  rounded-sm justify-between items-center  max-w-4xl mt-4 text-black border border-neutral-100  
       mx-auto shadow-input  px-2 py-2 relative "
       >
         <div className="relative size-7  rounded-full ">

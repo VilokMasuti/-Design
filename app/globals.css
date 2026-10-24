@@ -1,6 +1,18 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
+:root {
+  --background: var(--color-neutral-50);
+  --foreground: var(--color-neutral-950);
+}
+
+.dark {
+  --background: var(--color-neutral-950);
+  --foreground: var(--color-neutral-50);
+}
 @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   --font-inter: var(--font-inter);
   --font-satoshi: var(--font-satoshi);
   --font-heading: var(--font-mono);
@@ -11,9 +23,33 @@
     0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 }
 
+@theme {
+  --animate-marquee: marquee 10s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(100%);
+    }
+  }
+}
+
 html {
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Hide scrollbar globally — sidebar-scroll re-enables its own */
+  scrollbar-width: none;
+
+  color-scheme: dark;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 body {
   font-family: var(--font-inter), var(--font-satoshi), sans-serif;
@@ -28,4 +64,15 @@ h4,
 h5,
 h6 {
   text-wrap: pretty;
+}
+
+.Back {
+  background-image: repeating-linear-gradient(
+    315deg,
+    var(--pattern-fg) 0,
+    var(--pattern-fg) 1px,
+    transparent 0,
+    transparent 50%
+  );
+  background-size: 10px 10px;
 }
