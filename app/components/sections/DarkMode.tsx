@@ -30,7 +30,7 @@ export default function DarkMoade() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
   return (
-    <article className="  min-h-screen    flex items-center justify-center  relative Back ">
+    <article className="  min-h-screen    flex items-center justify-center  relative  ">
       <div className="relative z-10 h-90 w-80 bg-neutral-50 dark:bg-neutral-900 shadow-2xl border border-neutral-100 dark:border-neutral-800 rounded-xl overflow-hidden">
         <div className="relative mask-r-from-50% mask-l-from-50% mask-b-from-50% mask-t-from-50%">
           <Pattern />
@@ -40,7 +40,7 @@ export default function DarkMoade() {
               duration: 12,
               ease: "linear",
               repeat: Infinity,
-              repeatType: "loop",
+              repeatType: "mirror",
             }}
             className="flex items-center gap-10 justify-center h-40 "
           >

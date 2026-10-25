@@ -47,13 +47,15 @@ export default function RootLayout({
     >
       <body
         className="
-    min-h-dvh flex flex-col bg-background text-foreground Back
+
 
 
   "
       >
         <NextThemesProvider attribute="class" defaultTheme="light">
-          {children}
+          <main className="bg-background min-h-dvh flex flex-col   text-foreground">
+            {children}
+          </main>
         </NextThemesProvider>
       </body>
     </html>

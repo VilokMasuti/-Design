@@ -2,7 +2,9 @@
 import { motion } from "motion/react";
 import useSound from "use-sound";
 import Container from "../components/Container";
+import ModelToggle from "../components/ModelToggle";
 import DarkMode from "../components/sections/DarkMode";
+import Grid from "../components/sections/Grid";
 import { Keyboard } from "../components/sections/Keyboardsimple";
 import Responsivesidebar from "../components/sections/Responsivesidebar";
 import Marker from "../components/sections/SVG/Marker";
@@ -13,9 +15,9 @@ const Par = () => {
   });
 
   return (
-    <main className="  min-h-screen  ">
+    <main className="  min-h-screen  relative ">
       <Responsivesidebar />
-
+      <ModelToggle />
       <Container className=" flex flex-col items-center justify-center mt-2.5 gap-5 ">
         <h1 className=" font-satoshi capitalize mt-2.5">Button Design..</h1>
         <div className="flex items-center" onPointerDown={() => playOpen()}>
@@ -60,6 +62,7 @@ const Par = () => {
         </div>
       </Container>
       <DarkMode />
+      <Grid />
     </main>
   );
 };
