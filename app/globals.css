@@ -24,6 +24,8 @@
 }
 
 @theme {
+  --color-wire: #64748b;
+  --color-signal: #8b0000;
   --animate-marquee: marquee 10s linear infinite;
 
   @keyframes marquee {
@@ -75,4 +77,12 @@ h6 {
     transparent 50%
   );
   background-size: 10px 10px;
+}
+
+.card {
+  @apply relative   mb-2 max-w-xl mx-auto overflow-hidden shadow-sm block transition-all duration-200;
+}
+
+.overlay {
+  @apply after:content-[''] after:absolute after:bg-black after:opacity-0 after:w-full after:h-full after:inset-0 hover:after:opacity-90 after:transition-all after:duration-200;
 }

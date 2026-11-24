@@ -1,13 +1,19 @@
 "use client";
+
 import { motion } from "motion/react";
 import useSound from "use-sound";
 import Container from "../components/Container";
 import ModelToggle from "../components/ModelToggle";
+import BentoGrid from "../components/sections/BentoGrid";
 import DarkMode from "../components/sections/DarkMode";
+import Form from "../components/sections/Form";
 import Grid from "../components/sections/Grid";
 import { Keyboard } from "../components/sections/Keyboardsimple";
+import Properties from "../components/sections/Properties";
 import Responsivesidebar from "../components/sections/Responsivesidebar";
 import Marker from "../components/sections/SVG/Marker";
+import SvgBell from "../components/sections/SVG/SvgBell";
+import SvgLine from "../components/sections/SVG/SvgLine";
 const Par = () => {
   const [playOpen] = useSound("/click.mp3", {
     volume: 0.25,
@@ -60,9 +66,15 @@ const Par = () => {
         <div className=" my-10">
           <Marker />
         </div>
+        <Properties />
       </Container>
       <DarkMode />
       <Grid />
+      <Form />
+      <SvgBell />
+
+      <SvgLine />
+      <BentoGrid />
     </main>
   );
 };

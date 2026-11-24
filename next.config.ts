@@ -13,6 +13,7 @@ const nextConfig: NextConfig = {
         hostname: "plus.unsplash.com",
       },
     ],
+    qualities: [25, 50, 75, 100],
   },
 };
 

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
@@ -41,8 +40,6 @@ export default function RootLayout({
         inter.variable,
         satoshi.variable,
         jetbrainsMono.variable,
-        "[--pattern-fg:var(--color-neutral-950)]/4",
-        "dark:[--pattern-fg:var(--color-neutral-50)]/10",
       ].join(" ")}
     >
       <body
@@ -52,11 +49,9 @@ export default function RootLayout({
 
   "
       >
-        <NextThemesProvider attribute="class" defaultTheme="light">
-          <main className="bg-background min-h-dvh flex flex-col   text-foreground">
-            {children}
-          </main>
-        </NextThemesProvider>
+        <main className="bg-background min-h-dvh flex flex-col   text-foreground">
+          {children}
+        </main>
       </body>
     </html>
   );
